@@ -35,8 +35,8 @@ export async function fetchAreas() {
   return res.json();
 }
 
-export async function fetchFormalities() {
-  const res = await fetch(`${API_URL}/api/tramites`, API_OPTIONS);
+export async function fetchFormalities(params = "") {
+  const res = await fetch(`${API_URL}/api/tramites${params}`, API_OPTIONS);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

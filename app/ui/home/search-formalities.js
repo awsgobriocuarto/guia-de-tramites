@@ -94,4 +94,4 @@ const SearchFormalities = (props) => {
   );
 };
 
-export default SearchBarAlgolia;
+export default SearchFormalities;

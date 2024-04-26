@@ -1,13 +1,35 @@
-import React from "react";
+import { fetchAreas, fetchCategories } from "@/app/lib/data";
+import Search from "./search";
+import Select from "./select";
 
-export default function FormalitiesFilters() {
+export default async function FormalitiesFilters() {
+  const categories = await fetchCategories();
+  const areas = await fetchAreas();
   return (
     <div className="formalities-filters">
       <div className="container">
         <div className="row">
-          <div className="col-md-4">search</div>
-          <div className="col-md-4">select</div>
-          <div className="col-md-4">select</div>
+          <h4>Busqueda Avanzada</h4>
+          <div className="col-md-4">
+            <h5>Buscar</h5>
+            <Search placeholder={`Buscar...`} />
+          </div>
+          <div className="col-md-4">
+            <h5>Categoria</h5>
+            <Select
+              data={categories}
+              collection="category"
+              placeholder="Ver todo"
+            />
+          </div>
+          <div className="col-md-4">
+            <h5>Area</h5>
+            <Select
+              data={areas.data}
+              collection="areas"
+              placeholder="Ver todo"
+            />
+          </div>
         </div>
       </div>
     </div>
