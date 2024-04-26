@@ -1,3 +1,9 @@
+import CategoriesList from "./ui/home/categories-list";
+
 export default function Home() {
-  return <main>home</main>;
+  return (
+    <main>
+      <CategoriesList />
+    </main>
+  );
 }
