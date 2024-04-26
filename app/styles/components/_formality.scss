@@ -1,0 +1,52 @@
+.formality {
+  padding: 60px 0;
+  h3 {
+    color: $primary;
+    text-transform: uppercase;
+    line-height: 2.4rem;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $info;
+    margin-bottom: 12px;
+  }
+
+  &-info {
+    .card {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+      border-bottom: 1px solid $gray-400;
+      padding: 20px 0;
+      margin-bottom: 30px;
+    }
+    .card-body {
+      padding: 0;
+    }
+  }
+  &-area {
+    //background-color: orange;
+    .card {
+      margin-bottom: 30px;
+    }
+    .card-header {
+      text-align: center;
+    }
+    .card-body {
+      text-align: center;
+    }
+    .card-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: 20px 0;
+      color: $primary;
+    }
+    .card-subtitle {
+    }
+    .card-title {
+    }
+    .card-text {
+    }
+  }
+}

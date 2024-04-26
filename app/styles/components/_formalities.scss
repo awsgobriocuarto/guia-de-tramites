@@ -1,12 +1,11 @@
 .formalities {
-  background-color: $primary;
   &-filters {
     padding: 60px 0;
-    background-color: $warning;
+    background-color: $primary;
+    color: white;
   }
   &-list {
     padding: 60px 0;
-    background-color: pink;
     .card {
       margin-bottom: 15px;
     }
