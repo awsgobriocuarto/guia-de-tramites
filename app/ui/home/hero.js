@@ -1,4 +1,5 @@
 import React from "react";
+import SearchFormalities from "./search-formalities";
 
 export default function Hero() {
   return (
@@ -7,6 +8,7 @@ export default function Hero() {
         <div className="row">
           <div className="col-md-6">
             <h1>¿Qué trámite estás buscando?</h1>
+            <SearchFormalities />
           </div>
         </div>
       </div>
