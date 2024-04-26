@@ -1,0 +1,50 @@
+.categories {
+  background-color: $gray-200;
+  padding: 100px 0;
+  .card {
+    color: $gray-700;
+    box-shadow: 0 0 8px $gray-200;
+    background-color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    &:hover {
+      color: $gray-900;
+      box-shadow: 0 0 8px $gray-300;
+      border-color: $primary;
+      .card-body {
+        border-right: 12px solid $primary;
+      }
+      .card-icon {
+        color: $primary;
+        border-color: $secondary;
+      }
+    }
+  }
+  .card-body {
+    padding: 1.6rem;
+    border-right: 12px solid $gray-300;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    padding: 20px;
+  }
+  .card-icon {
+    border: 1px solid $gray-300;
+    border-radius: 9999px;
+    height: 60px;
+    width: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-text {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "Univia", sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

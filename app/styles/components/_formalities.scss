@@ -1,0 +1,43 @@
+.formalities {
+  background-color: $primary;
+  &-filters {
+    padding: 60px 0;
+    background-color: $warning;
+  }
+  &-list {
+    padding: 60px 0;
+    background-color: pink;
+    .card {
+      margin-bottom: 15px;
+    }
+    .card-body {
+      padding: 24px 20px;
+    }
+    .card-title {
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $primary;
+      margin-bottom: 4px;
+    }
+    .card-subtitle {
+      font-size: 0.8rem;
+      color: $info;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        color: $info;
+        text-decoration: none;
+      }
+    }
+    .card-text {
+      margin-bottom: 16px;
+    }
+    .card-cta {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}
