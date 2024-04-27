@@ -7,12 +7,16 @@ export default async function FormalitiesList({ params }) {
   return (
     <div className="formalities-list">
       <div className="container">
-        <h3>Tramites {formalities?.length}</h3>
-        <div className="row">
-          {formalities.map((formality) => (
-            <FormalitiesCard key={formality.id} formality={formality} />
-          ))}
+        <div className="headers">
+          <h2>
+            <span>{formalities?.length}</span>{" "}
+            {formalities.length == 1 ? "Trámite" : "Trámites"}
+          </h2>
         </div>
+
+        {formalities.map((formality) => (
+          <FormalitiesCard key={formality.id} formality={formality} />
+        ))}
       </div>
     </div>
   );
