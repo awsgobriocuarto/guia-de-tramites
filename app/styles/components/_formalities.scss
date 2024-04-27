@@ -1,8 +1,14 @@
 .formalities {
   &-filters {
     padding: 60px 0;
-    background-color: $primary;
+    background-color: $secondary;
     color: white;
+    h4 {
+      margin-bottom: 20px;
+    }
+    h5 {
+      display: none;
+    }
   }
   &-list {
     padding: 60px 0;
@@ -37,6 +43,30 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .formalities {
+    &-filters {
+      padding: 40px 0;
+      color: white;
+      .form-control,
+      .form-select {
+        margin-bottom: 20px;
+      }
+    }
+    .card {
+      .card-subtitle {
+        margin-bottom: 16px;
+      }
+      .card-text {
+        margin-bottom: 16px;
+      }
+      .card-cta {
+        justify-content: flex-start;
+      }
     }
   }
 }

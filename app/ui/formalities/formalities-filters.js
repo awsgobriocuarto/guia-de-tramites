@@ -9,7 +9,7 @@ export default async function FormalitiesFilters() {
     <div className="formalities-filters">
       <div className="container">
         <div className="row">
-          <h4>Busqueda Avanzada</h4>
+          <h4>Búsqueda Avanzada</h4>
           <div className="col-md-4">
             <h5>Buscar</h5>
             <Search placeholder={`Buscar...`} />

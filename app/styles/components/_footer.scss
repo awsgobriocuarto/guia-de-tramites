@@ -1,5 +1,6 @@
 footer {
-  background-color: orange;
+  background-color: $gray-800;
+  color: white;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -7,4 +8,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  p {
+    margin-bottom: 0;
+  }
 }

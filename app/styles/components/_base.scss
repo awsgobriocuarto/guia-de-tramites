@@ -7,3 +7,19 @@ body {
   background-color: $gray-200;
   margin-bottom: 100px;
 }
+
+.headers {
+  text-align: center;
+  h2 {
+    color: $primary;
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    span {
+      font-weight: 500;
+      color: $info;
+    }
+  }
+}

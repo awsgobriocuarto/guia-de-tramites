@@ -1,21 +1,19 @@
-import { fetchFormalitiesBySlug } from "@/app/lib/data";
+import { fetchAreasById, fetchFormalitiesBySlug } from "@/app/lib/data";
 import AreaDetail from "@/app/ui/formality/area-detail";
 import FormalityInfo from "@/app/ui/formality/formality-info";
-import React from "react";
+import LinkToBack from "@/app/ui/link-to-back";
 
 export default async function Formality({ params }) {
   const slug = params.slug;
   const formality = await fetchFormalitiesBySlug(slug);
-  //console.log(formality);
+  const area = await fetchAreasById(formality.area_id);
+  //console.log(area);
   if (!formality) {
     return "nada por aqui";
   }
   return (
     <main className="formality">
       <div className="container">
-        <div className="headers">
-          <h2>Tramite</h2>
-        </div>
         <div className="row justify-content-between">
           <div className="col-md-7">
             <h4>
@@ -32,13 +30,16 @@ export default async function Formality({ params }) {
                 <p className="text-primary mt-4 mb-3">
                   Este tramite se puede realizar de manera online
                 </p>
-                <a
-                  href={formality.url}
-                  className="btn btn-lg btn-primary text-white mb-4"
-                  target="_blank"
-                >
-                  Iniciar trámite online
-                </a>
+                <div className="d-flex justify-content-between">
+                  <a
+                    href={formality.url}
+                    className="btn btn-lg btn-primary text-white"
+                    target="_blank"
+                  >
+                    Iniciar trámite online
+                  </a>
+                  <LinkToBack variant="btn-link" />
+                </div>
               </>
             ) : (
               ""
@@ -117,7 +118,7 @@ export default async function Formality({ params }) {
             )}
           </div>
           <div className="col-md-4">
-            <AreaDetail area={formality.area} formality={formality} />
+            <AreaDetail area={area} formality={formality} />
           </div>
         </div>
       </div>

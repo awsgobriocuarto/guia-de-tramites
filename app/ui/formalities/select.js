@@ -1,6 +1,5 @@
 "use client";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import Form from "react-bootstrap/Form";
 
 export default function Select({
   data = [],
@@ -20,10 +19,10 @@ export default function Select({
     }
     replace(`${pathname}?${params.toString()}`);
   };
-  //console.log(collection);
   return (
     <div>
-      <Form.Select
+      <select
+        className="form-select"
         onChange={(event) => handleSelect(event.target.value)}
         defaultValue={searchParams.get(collection)?.toString()}
       >
@@ -33,7 +32,7 @@ export default function Select({
             {item.name}
           </option>
         ))}
-      </Form.Select>
+      </select>
     </div>
   );
 }
