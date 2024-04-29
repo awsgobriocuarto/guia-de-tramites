@@ -9,12 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@algolia/autocomplete-core": "^1.17.0",
+    "@next/third-parties": "^14.2.3",
+    "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
+    "bootstrap": "^5.3.3",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "react-bootstrap": "^2.10.2",
+    "sass": "^1.75.0"
   }
 }
