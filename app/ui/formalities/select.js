@@ -19,6 +19,7 @@ export default function Select({
     }
     replace(`${pathname}?${params.toString()}`);
   };
+  //console.log(collection);
   return (
     <div>
       <select

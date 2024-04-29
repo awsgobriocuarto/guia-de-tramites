@@ -13,6 +13,7 @@ export default function Search({ placeholder }) {
     const params = new URLSearchParams(searchParams);
 
     if (term) {
+      params.delete("filter");
       params.set("search", term);
     } else {
       params.delete("search");
