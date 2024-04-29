@@ -20,10 +20,8 @@ export default function Menu({ categories = {}, areas = {} }) {
             <Nav.Link as={Link} href="/">
               Inicio
             </Nav.Link>
-            <Nav.Link as={Link} href="/tramites">
-              Tramites
-            </Nav.Link>
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+            <Nav.Link href="/tramites?ver=todos">Tramites</Nav.Link>
+            <NavDropdown title="Categorias" id="top-menu">
               {categories.map((category) => (
                 <NavDropdown.Item
                   key={category.id}
@@ -33,7 +31,7 @@ export default function Menu({ categories = {}, areas = {} }) {
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
-            <NavDropdown title="Areas" id="basic-nav-dropdown">
+            <NavDropdown title="Areas" id="top-menu">
               {areas.map((area) => (
                 <NavDropdown.Item
                   key={area.id}
@@ -42,6 +40,20 @@ export default function Menu({ categories = {}, areas = {} }) {
                   {area.name}
                 </NavDropdown.Item>
               ))}
+            </NavDropdown>
+            <NavDropdown title="Ayuda" id="top-menu">
+              <NavDropdown.Item
+                href="https://cidi.cba.gov.ar/portal-publico/acceso"
+                target="_blank"
+              >
+                Niveles de CiDI
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                href="https://prensa.cba.gov.ar/informacion-general/ciudadano-digital-el-paso-a-paso-para-obtener-cidi-nivel-2/"
+                target="_blank"
+              >
+                Obtener CIDI Nivel 2
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Image

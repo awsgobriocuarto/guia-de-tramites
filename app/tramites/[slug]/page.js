@@ -1,6 +1,7 @@
 import { fetchAreasById, fetchFormalitiesBySlug } from "@/app/lib/data";
 import AreaDetail from "@/app/ui/formality/area-detail";
 import FormalityInfo from "@/app/ui/formality/formality-info";
+import Banners from "@/app/ui/home/banners";
 import LinkToBack from "@/app/ui/link-to-back";
 
 export default async function Formality({ params }) {
@@ -91,8 +92,8 @@ export default async function Formality({ params }) {
                   <div />
                   {formality.cost && formality.cost != 2 ? (
                     <span>
-                      El trámite tiene costo, sugerimos contactarse al area
-                      responsable para solicitar las tasas vigentes
+                      El trámite tiene costo, sugerimos contactarse con el área
+                      responsable para consultar sobre las tasas vigentes
                     </span>
                   ) : (
                     <span>El trámite no tiene costo</span>
@@ -119,6 +120,7 @@ export default async function Formality({ params }) {
           </div>
           <div className="col-md-4">
             <AreaDetail area={area} formality={formality} />
+            <Banners type={"box"} />
           </div>
         </div>
       </div>

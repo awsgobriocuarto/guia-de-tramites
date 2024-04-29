@@ -23,3 +23,10 @@
     letter-spacing: 0.04rem;
   }
 }
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 10px 5px;
+    font-family: "Univia", sans-serif;
+  }
+}
