@@ -1,4 +1,5 @@
-import { inter, monserrat } from "./ui/fonts";
+import { inter } from "./ui/fonts";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./styles/app.scss";
 import Menu from "./ui/menu";
 import Footer from "./ui/footer";
@@ -22,6 +23,8 @@ export default async function RootLayout({ children }) {
         <BarColor />
         {children}
         <Footer />
+
+        <GoogleTagManager gtmId="GTM-TPD3DSCW" />
       </body>
     </html>
   );
