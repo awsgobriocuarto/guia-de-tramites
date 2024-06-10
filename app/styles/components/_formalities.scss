@@ -23,16 +23,15 @@
       text-transform: uppercase;
       color: $primary;
       margin-bottom: 4px;
+      line-height: 1.8rem;
     }
-    .card-subtitle {
-      font-size: 0.8rem;
-      color: $info;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      a {
-        color: $info;
-        text-decoration: none;
+    .card-detail {
+      font-size: 0.9rem;
+      font-family: "Univia";
+      color: $gray-800;
+      span {
+        font-weight: 400;
+        text-decoration: underline;
       }
     }
     .card-text {
@@ -42,7 +41,8 @@
       height: 100%;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
+      flex-direction: column;
     }
   }
 }
@@ -58,6 +58,10 @@
       }
     }
     .card {
+      .card-detail {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
       .card-subtitle {
         margin-bottom: 16px;
       }
@@ -65,7 +69,7 @@
         margin-bottom: 16px;
       }
       .card-cta {
-        justify-content: flex-start;
+        align-items: flex-start;
       }
     }
   }
