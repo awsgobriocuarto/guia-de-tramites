@@ -15,19 +15,19 @@ export default async function FormalitiesFilters() {
             <Search placeholder={`Buscar...`} />
           </div>
           <div className="col-md-4">
-            <h5>Categoria</h5>
-            <Select
-              data={categories}
-              collection="category"
-              placeholder="Ver todo"
-            />
-          </div>
-          <div className="col-md-4">
             <h5>Area</h5>
             <Select
               data={areas.data}
               collection="area"
-              placeholder="Ver todo"
+              placeholder="Todas las áreas"
+            />
+          </div>
+          <div className="col-md-4">
+            <h5>Categoria</h5>
+            <Select
+              data={categories}
+              collection="category"
+              placeholder="Todas las categorías"
             />
           </div>
         </div>

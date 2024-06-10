@@ -21,16 +21,6 @@ export default function Menu({ categories = {}, areas = {} }) {
               Inicio
             </Nav.Link>
             <Nav.Link href="/tramites?ver=todos">Tramites</Nav.Link>
-            <NavDropdown title="Categorias" id="top-menu">
-              {categories.map((category) => (
-                <NavDropdown.Item
-                  key={category.id}
-                  href={`/tramites?category=${category.slug}`}
-                >
-                  {category.name}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
             <NavDropdown title="Areas" id="top-menu">
               {areas.map((area) => (
                 <NavDropdown.Item
@@ -38,6 +28,16 @@ export default function Menu({ categories = {}, areas = {} }) {
                   href={`/tramites?area=${area.slug}`}
                 >
                   {area.name}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
+            <NavDropdown title="Categorias" id="top-menu">
+              {categories.map((category) => (
+                <NavDropdown.Item
+                  key={category.id}
+                  href={`/tramites?category=${category.slug}`}
+                >
+                  {category.name}
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
