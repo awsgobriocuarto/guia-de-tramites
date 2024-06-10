@@ -29,7 +29,7 @@ export default async function Formality({ params }) {
             {formality.online == 1 ? (
               <>
                 <p className="text-primary mt-4 mb-3">
-                  Este tramite se puede realizar de manera online
+                  Este trámite se puede realizar de manera online
                 </p>
                 <div className="d-flex justify-content-between">
                   <a
@@ -43,7 +43,7 @@ export default async function Formality({ params }) {
                 </div>
               </>
             ) : (
-              ""
+              <LinkToBack variant="btn-link p-0" />
             )}
             <hr />
 
