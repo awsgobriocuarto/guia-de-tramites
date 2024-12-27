@@ -1,6 +1,7 @@
 import { fetchAreasById, fetchFormalitiesBySlug } from "@/app/lib/data";
 import AreaDetail from "@/app/ui/formality/area-detail";
 import FormalityInfo from "@/app/ui/formality/formality-info";
+import FormalityMedia from "@/app/ui/formality/formality-media";
 import Banners from "@/app/ui/home/banners";
 import LinkToBack from "@/app/ui/link-to-back";
 
@@ -65,20 +66,20 @@ export default async function Formality({ params }) {
             )}
             {/* who */}
             {formality.who ? (
-              <FormalityInfo title="Quien puede hacerlo" text={formality.who} />
+              <FormalityInfo title="Quién puede hacerlo" text={formality.who} />
             ) : (
               ""
             )}
             {/* when */}
             {formality.when ? (
-              <FormalityInfo title="Donde se realiza" text={formality.when} />
+              <FormalityInfo title="Dónde se realiza" text={formality.when} />
             ) : (
               ""
             )}
             {/* previous */}
             {formality.previous ? (
               <FormalityInfo
-                title="¿Requiere tramites previos?"
+                title="¿Requiere trámites previos?"
                 text={formality.previous}
               />
             ) : (
@@ -105,7 +106,7 @@ export default async function Formality({ params }) {
             {/* time */}
             {formality.time ? (
               <FormalityInfo
-                title="¿Cuanto tiempo demora?"
+                title="¿Cuánto tiempo demora?"
                 text={formality.time}
               />
             ) : (
@@ -113,7 +114,13 @@ export default async function Formality({ params }) {
             )}
             {/* more */}
             {formality.more ? (
-              <FormalityInfo title="Mas info" text={formality.more} />
+              <FormalityInfo title="Más info" text={formality.more} />
+            ) : (
+              ""
+            )}
+            {/* media */}
+            {formality.media.length > 0 ? (
+              <FormalityMedia media={formality.media} />
             ) : (
               ""
             )}
