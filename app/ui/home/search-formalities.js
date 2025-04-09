@@ -4,8 +4,9 @@ import { useMemo, useState, useRef } from "react";
 import { createAutocomplete } from "@algolia/autocomplete-core";
 import Link from "next/link";
 
-const API_URL = "https://admin.tramitesdev.riocuarto.gob.ar";
-const API_TOKEN = "Bearer 1|Dn58lwU4vJcuXXSMtdAyYBhyc5NZyRXWZFNgMney";
+const API_URL = "https://admin.tramites.riocuarto.gob.ar";
+const API_TOKEN = "Bearer 1|xpFQgyeplpi1fYFNmEJLhiValUN3uRIlKIqUWML67fc87507";
+
 const API_OPTIONS = {
   headers: {
     Authorization: API_TOKEN,
@@ -38,7 +39,7 @@ const SearchFormalities = (props) => {
             getItems: async ({ query }) => {
               if (!!query) {
                 const response = await fetch(
-                  `${API_URL}/api/tramites?search=${query}`,
+                  `${API_URL}/api/v1/tramites?search=${query}`,
                   API_OPTIONS
                 );
                 if (!response.ok) {
