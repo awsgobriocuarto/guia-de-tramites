@@ -1,0 +1,283 @@
+#chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    display: flex;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 5px; /* Opcional */
+    align-items: flex-start; /* Alinea el avatar y el texto al inicio */
+  }
+  
+  .user-message {
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    flex-direction: row-reverse; /* Avatar a la izquierda, texto a la derecha */
+    background-color: transparent; /* Sin color de fondo */
+    padding-right: 0;
+  }
+  
+  .assistant-message {
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    background-color: transparent; /* Sin color de fondo */
+    padding-left: 0;
+  }
+  
+  .avatar-assistant {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .avatar-user {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  
+  .message-content {
+    flex-grow: 1;
+    word-break: break-word;
+  }
+  
+  .user-message .message-content {
+    text-align: right;
+    margin-left: 0;
+    margin-right: 8px;
+  }
+  
+  .user-message .message-content strong {
+    display: none;
+  }
+  
+  .message-content strong {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .message-content a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  .message-content a:hover {
+    text-decoration: underline;
+  }
+
+// chatbuble
+.floating-chat {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    display: none;
+    align-items: flex-start;
+    opacity: 0;
+    z-index: 9999;
+  }
+  
+  .floating-chat.show {
+    display: flex;
+    animation: fadeInSlide 1s ease forwards;
+  }
+  
+  .floating-chat.hide {
+    animation: fadeOutSlide 1s ease forwards;
+  }
+  
+  .floating-chat .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+  }
+  
+  .floating-chat .message-bubble {
+    background: white;
+    padding: 10px 14px 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    position: relative;
+  }
+  
+  .floating-chat .message-bubble p {
+    margin: 0;
+    font-size: 15px;
+  }
+  
+  .floating-chat .message-bubble .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .floating-chat .message-bubble .close-btn:hover {
+    color: #000;
+  }
+
+
+  .message-bubble button {
+    background-color: #1e90ff; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .message-bubble button:hover {
+    background-color: #007bff;
+    align-content: center; 
+    
+  }
+  
+  .message-bubble button:focus {
+    outline: none; /* Elimina el contorno predeterminado al enfocar */
+    box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.5); /* Añade un contorno de enfoque personalizado */
+  }
+  
+  @keyframes fadeInSlide {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOutSlide {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+  }
+
+  // chatinput 
+  #chat-form {
+    display: flex;
+    border-top: 1px solid #ccc;
+  }
+  
+  #chat-form input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+  }
+  
+  #chat-form button {
+    background: $primary;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #chat-form button:hover {
+    opacity: 0.8;
+  }
+
+  //chat togle
+  #chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Hace que el botón sea circular */
+    background-color: $primary; /* Color de fondo azul */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border: none; /* Elimina el borde por defecto del botón */
+    outline: none; /* Elimina el outline al enfocar */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transición para la animación */
+    padding: 0; /* Elimina el padding para que la imagen ocupe todo el botón */
+  }
+  
+  #chat-toggle:hover {
+    transform: scale(1.1); /* Efecto de "pop" al hacer hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  #chat-toggle:active {
+    transform: scale(0.95); /* Efecto de "hundimiento" al hacer clic */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  #chat-toggle img {
+    width: 100%; /* La imagen ocupa todo el ancho del botón */
+    height: 100%; /* La imagen ocupa toda la altura del botón */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del círculo sin recortarse, manteniendo su relación de aspecto */
+  }
+
+
+  //chat windows
+  #chat-container {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+
+  #chat-header {
+    background: $primary; /* Cambiamos el background a blanco */
+    color: white; 
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  #chat-header button {
+    background-color: $primary; /* Establecemos el color de fondo */
+    border: none; /* Removemos cualquier borde */
+    color: white; /* Mantenemos el color del texto blanco */
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 8px; /* Ajustamos el padding para que el color de fondo se vea */
+    margin-left: 10px;
+    border-radius: 5px; /* Opcional: para darle una forma redondeada al fondo */
+    opacity: 0.7; /* Opcional: si aún quieres algo de transparencia */
+    transition: opacity 0.2s ease-in-out; /* Opcional: transición para la opacidad */
+  }
+  
+  #chat-header button:hover {
+    opacity: 1; /* Opcional: opacidad completa al hacer hover */
+  }
