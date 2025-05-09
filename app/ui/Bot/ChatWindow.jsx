@@ -3,7 +3,7 @@
 import React from 'react';
 import ChatBox from './ChatBox';
 import ChatInput from './ChatInput';
-import useChatbot from 'app/hooks/useChatbot';
+import useChatbot from '@/app/hooks/useChatbot';
 
 function ChatWindow({ isOpen, onClose }) {
   const { messages, inputValue, handleInputChange, handleSubmit } = useChatbot();

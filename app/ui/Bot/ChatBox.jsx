@@ -16,6 +16,7 @@ function ChatBox({ messages, isAssistantLoading }) {
       {messages.map((msg, index) => (
         <div key={index} className={msg.sender === 'Asistente' ? 'message assistant-message' : 'message user-message'}>
           {msg.sender === 'Asistente' && (
+            //eslint-disable-next-line @next/next/no-img-element
             <img className="avatar-assistant" src="/images/logo_avatar.png" alt="Asistente" />
           )}
           {msg.sender !== 'Asistente' && (
