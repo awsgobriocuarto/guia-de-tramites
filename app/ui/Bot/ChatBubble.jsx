@@ -81,17 +81,23 @@ function ChatBubble({ onOpen, isChatOpen }) {
 
   return isVisible ? (
     <div className="floating-chat show">
-      <img className="avatar" src={avatar} alt="Asistente" />
+      
+      <img className="avatar" src="/images/logo_avatar.png" alt="Asistente" />
       <div className="message-bubble">
         <button className="close-btn" onClick={handleClose}>&times;</button>
         <p>¡Hola! ¿Tenés dudas sobre un trámite?</p>
         <button onClick={onOpen} style={{ marginTop: '5px' }}>Comenzar</button>
       </div>
-      <audio id="chatSound" ref={sound} preload="auto">
+      
+      
+      
+      {
+        /*Los sonidos no funcionan 
+      /* <audio id="chatSound" ref={sound} preload="auto">
         <source src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" type="audio/ogg" />
-        <source src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.mp3" type="audio/mpeg" />
+        <source src="https://cdn.freesound.org/previews/341/341695_5260877-lq.mp3" type="audio/mpeg" />
         Tu navegador no soporta la etiqueta de audio.
-      </audio>
+      </audio> */}
     </div>
   ) : null;
 }
