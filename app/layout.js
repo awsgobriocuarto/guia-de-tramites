@@ -6,6 +6,7 @@ import Footer from "./ui/footer";
 import Script from "next/script";
 import { BarColor } from "./ui/bar-color";
 import { fetchAreas, fetchCategories } from "./lib/data";
+import Bot from "./ui/Bot/bot";
 
 export const metadata = {
   title: "Guia de Trámites",
@@ -23,6 +24,8 @@ export default async function RootLayout({ children }) {
         <BarColor />
         {children}
         <Footer />
+        
+        <Bot />
 
         <GoogleTagManager gtmId="GTM-TPD3DSCW" />
       </body>
