@@ -9,9 +9,9 @@ function ChatInput({ inputValue, onInputChange, onSubmit }) {
         placeholder="Escribe tu consulta..."
         required
         value={inputValue}
-        onChange={onInputChange}
+        onChange={onInputChange} className='form-control'
       />
-      <button type="submit">Enviar</button>
+      <button className='btn btn-primary' type="submit">Enviar</button>
     </form>
   );
 }
