@@ -4,6 +4,24 @@ import FormalityInfo from "@/app/ui/formality/formality-info";
 import FormalityMedia from "@/app/ui/formality/formality-media";
 import Banners from "@/app/ui/home/banners";
 import LinkToBack from "@/app/ui/link-to-back";
+import Link from "next/link";
+
+
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const  { slug }  = await params
+ 
+  // fetch data
+  const formality = await fetchFormalitiesBySlug(slug);
+  
+
+  return {
+    title: formality.title,
+  
+  }
+
+}
 
 export default async function Formality({ params }) {
   const slug = params.slug;
@@ -14,6 +32,7 @@ export default async function Formality({ params }) {
     return "nada por aqui";
   }
   return (
+    
     <main className="formality">
       <div className="container">
         <div className="row justify-content-between">

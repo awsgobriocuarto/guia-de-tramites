@@ -81,7 +81,7 @@ function ChatBubble({ onOpen, isChatOpen }) {
 
   return isVisible ? (
     <div className="floating-chat show">
-      
+      {/* eslint-disable-next-line */}
       <img className="avatar" src="/images/logo_avatar.png" alt="Asistente" />
       <div className="message-bubble">
         <button className="close-btn" onClick={handleClose}>&times;</button>
