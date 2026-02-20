@@ -4,8 +4,11 @@ import { useMemo, useState, useRef } from "react";
 import { createAutocomplete } from "@algolia/autocomplete-core";
 import Link from "next/link";
 
-const API_URL = "https://admin.tramites.riocuarto.gob.ar";
-const API_TOKEN = "Bearer 1|xpFQgyeplpi1fYFNmEJLhiValUN3uRIlKIqUWML67fc87507";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_VERSION = process.env.NEXT_PUBLIC_API_VERSION;
+const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
+
+const API_URL = `${API_BASE_URL}/api${API_VERSION ? `/${API_VERSION}` : ""}`;
 
 const API_OPTIONS = {
   headers: {
@@ -39,8 +42,8 @@ const SearchFormalities = (props) => {
             getItems: async ({ query }) => {
               if (!!query) {
                 const response = await fetch(
-                  `${API_URL}/api/v1/tramites?search=${query}`,
-                  API_OPTIONS
+                  `${API_URL}/tramites?search=${query}`,
+                  API_OPTIONS,
                 );
                 if (!response.ok) {
                   throw new Error("Error al obtener los datos");
@@ -54,7 +57,7 @@ const SearchFormalities = (props) => {
         ],
         ...props,
       }),
-    [props]
+    [props],
   );
 
   const formRef = useRef(null);
