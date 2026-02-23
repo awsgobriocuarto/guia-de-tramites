@@ -3,16 +3,7 @@
 import { useMemo, useState, useRef } from "react";
 import { createAutocomplete } from "@algolia/autocomplete-core";
 import Link from "next/link";
-
-const API_URL = "https://admintramites.riocuarto.gob.ar";
-const API_TOKEN = "Bearer 1|xpFQgyeplpi1fYFNmEJLhiValUN3uRIlKIqUWML67fc87507";
-
-const API_OPTIONS = {
-  headers: {
-    Authorization: API_TOKEN,
-  },
-  cache: "no-store",
-};
+import { searchFormalitiesAction } from "@/app/lib/actions";
 
 const AutocompleteItem = ({ title, slug }) => {
   return (
@@ -38,14 +29,7 @@ const SearchFormalities = (props) => {
             sourceId: "formalities-next-api",
             getItems: async ({ query }) => {
               if (!!query) {
-                const response = await fetch(
-                  `${API_URL}/api/v1/tramites?search=${query}`,
-                  API_OPTIONS,
-                );
-                if (!response.ok) {
-                  throw new Error("Error al obtener los datos");
-                }
-                const data = await response.json();
+                const data = await searchFormalitiesAction(query);
                 return data.slice(0, 15);
               }
               return [];
@@ -54,7 +38,6 @@ const SearchFormalities = (props) => {
         ],
         ...props,
       }),
-    [props],
     [props],
   );
 

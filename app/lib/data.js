@@ -2,7 +2,6 @@ const API_BASE_URL = process.env.API_BASE_URL;
 const API_VERSION = process.env.API_VERSION;
 const API_TOKEN = process.env.API_TOKEN;
 
-
 if (!API_BASE_URL || !API_TOKEN) {
   throw new Error("API_BASE_URL o API_TOKEN no están definidas en el entorno");
 }
